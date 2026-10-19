@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Photos Bridge</string>
+    <string name="app_name_photos">Photos</string>
+    <string name="activity_pager_label">Photos Preview</string>
+    <string name="settings_title">Photos Bridge</string>
+    
+    <!-- Status -->
+    <string name="status_title">Status</string>
+    <string name="status_active">Bridge active</string>
+    <string name="status_desc">Ready for Pixel Camera preview clicks.</string>
+
+    <!-- Preferences -->
+    <string name="pref_section_behavior">Behavior</string>
+    <string name="pref_ask_every_time_title">Ask every time</string>
+    <string name="pref_ask_every_time_summary">Show gallery chooser on every photo preview</string>
+    <string name="pref_default_gallery_title">Default gallery</string>
+    <string name="pref_default_gallery_none">None (always ask)</string>
+    <string name="pref_change_default">Choose</string>
+    <string name="pref_clear_default">Reset</string>
+
+    <!-- Testing -->
+    <string name="pref_section_testing">Testing</string>
+    <string name="test_bridge_title">Test bridge</string>
+    <string name="test_bridge_summary">Simulate opening a photo from the camera</string>
+    <string name="test_bridge_button">Test</string>
+    <string name="test_bridge_toast">Launching test preview…</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_choose_gallery_title">Open with</string>
+    <string name="dialog_choose_gallery_title_video">Open video with</string>
+    <string name="dialog_remember_choice">Don\'t ask again</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="badge_default">Default</string>
+    <string name="no_galleries_title">No Gallery Found</string>
+    <string name="no_galleries_message">No compatible gallery app found. Please install a gallery app to view photos.</string>
+    <string name="gallery_launch_failed">Could not open gallery. Please select another app.</string>
+
+    <!-- About -->
+    <string name="about_section_title">About</string>
+    <string name="about_explanation_title">How it works</string>
+    <string name="about_explanation_text">Pixel Camera hardcodes review intents to Google Photos. This bridge catches them and forwards media to your chosen gallery. No internet access or root required.</string>
+    <string name="about_lockscreen_title">Lock screen</string>
+    <string name="about_lockscreen_text">Opening a third-party gallery from the lock screen will prompt you to unlock first.</string>
+</resources>
