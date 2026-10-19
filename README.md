@@ -1,4 +1,4 @@
-# Pixel Camera Photos Bridge
+# Pixel Camera GPhotosBridge
 
 A lightweight, privacy-respecting Android bridge application that impersonates `com.google.android.apps.photos` to allow **Google Pixel Camera** to open your photos and videos in any third-party gallery of your choice.
 
@@ -22,9 +22,9 @@ tapping the preview thumbnail results in an error message (*"Google Photos is re
 
 ---
 
-## The Solution: How Photos Bridge Works
+## The Solution: How GPhotosBridge Works
 
-**Photos Bridge** resolves this issue without modifying the signed Google Camera application:
+**GPhotosBridge** resolves this issue without modifying the signed Google Camera application:
 
 1. **Package Impersonation**: Built with the package identifier `com.google.android.apps.photos`, satisfying Pixel Camera's hardcoded check.
 2. **Intent Interceptor (`HostPhotoPagerActivity`)**: Implements and exports the exact activity class `com.google.android.apps.photos.pager.HostPhotoPagerActivity`, configured to handle all review intent actions:
@@ -35,12 +35,12 @@ tapping the preview thumbnail results in an error message (*"Google Photos is re
    - `android.intent.action.VIEW`
    - `android.intent.action.SEND`
 3. **Dynamic Gallery Chooser**:
-   - When you tap the preview thumbnail in Pixel Camera, Photos Bridge detects all installed gallery and viewer applications (e.g. *Fossify Gallery*, *Aves*, *Simple Gallery*, *GrapheneOS Gallery*, *Google Gallery*, *VLC*, etc.).
+   - When you tap the preview thumbnail in Pixel Camera, GPhotosBridge detects all installed gallery and viewer applications (e.g. *Fossify Gallery*, *Aves*, *Simple Gallery*, *GrapheneOS Gallery*, *Google Gallery*, *VLC*, etc.).
    - It displays a sleek Material 3 chooser modal, letting you pick which gallery app you want to open the photo or video with.
    - You can choose between **"Just once"** (ask every time) or **"Always"** (remember your choice).
 4. **Lock Screen Keyguard Handling**:
    - When taking photos from the secure lock screen (e.g. double-pressing the power button), third-party gallery apps cannot be shown over the keyguard.
-   - Photos Bridge detects the locked state and requests the system keyguard dismissal (`KeyguardManager.requestDismissKeyguard`) before forwarding the photo to your gallery.
+   - GPhotosBridge detects the locked state and requests the system keyguard dismissal (`KeyguardManager.requestDismissKeyguard`) before forwarding the photo to your gallery.
 5. **Secure Permission Delegation**:
    - Mediates temporary read access (`FLAG_GRANT_READ_URI_PERMISSION`) and sets `ClipData` for the content URI, ensuring target gallery applications have immediate read permissions for the newly captured media.
 6. **Launcher Settings & Testing Dashboard**:
@@ -62,7 +62,7 @@ tapping the preview thumbnail results in an error message (*"Google Photos is re
 ### Important: Package Name Conflict
 Android enforces that only one application with a given package name (`com.google.android.apps.photos`) can be installed per user profile.
 
-- If you have the official Google Photos application installed, you **must uninstall or disable it** before installing Photos Bridge:
+- If you have the official Google Photos application installed, you **must uninstall or disable it** before installing GPhotosBridge:
   ```bash
   adb shell pm uninstall -k --user 0 com.google.android.apps.photos
   ```

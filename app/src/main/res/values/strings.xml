@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Photos Bridge</string>
+    <string name="app_name">GPhotosBridge</string>
     <string name="app_name_photos">Photos</string>
     <string name="activity_pager_label">Photos Preview</string>
-    <string name="settings_title">Photos Bridge</string>
-    
+    <string name="settings_title">GPhotosBridge</string>
+
     <!-- Status -->
     <string name="status_title">Status</string>
     <string name="status_active">Bridge active</string>
