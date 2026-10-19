@@ -14,11 +14,8 @@ Package:   com.google.android.apps.photos
 Component: com.google.android.apps.photos.pager.HostPhotoPagerActivity
 ```
 
-Because this explicit component target is hardcoded into the camera app:
-- On de-Googled operating systems (such as **GrapheneOS**, **CalyxOS**, **LineageOS**, or standard AOSP builds),
-- Or on devices where the proprietary Google Photos app is uninstalled or disabled,
-
-tapping the preview thumbnail results in an error message (*"Google Photos is required to view photos"*), does nothing, or crashes. Standard Android default-app settings cannot redirect an explicit package intent.
+Maybe some people want to use the Pixel Camera app (maybe for quality, maybe out of habit) but not the Google Photos gallery app.
+Therefore on devices without the Google Photos app, tapping the preview thumbnail results in an error message (*"To view your photos and media, install Google Photos from Play Store."*), does nothing, or crashes. Standard Android default-app settings cannot redirect an explicit package intent.
 
 ---
 
@@ -135,4 +132,4 @@ GPhotosBridge/
 
 ## License
 
-This project is open-source and released under the Apache 2.0 License.
+This project is open-source and released under the GNU GPL v3 License.
